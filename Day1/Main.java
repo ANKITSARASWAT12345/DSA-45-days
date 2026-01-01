@@ -89,7 +89,7 @@ class Main{
         Node res=kthSmallesNode(root,k);
         if (res == null)
             System.out.println("There are less "
-                           + "than k nodes in the BST");
+                           + "than k node in the BST");
         else
             System.out.println("K-th Smallest" + " Elemement is "+res.data);
     }

@@ -14,7 +14,7 @@ Output: 32
 public class Main {
     public static void main(String[] args) {
         int arr[]={21,4,7};
-        System.out.println(sumFourDivisors(arr));
+        System.out.println("ans"+sumFourDivisors(arr));
     }
 
     public static  int sumFourDivisors(int[] nums) {

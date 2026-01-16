@@ -65,6 +65,7 @@ public class Main {
 
 
 
+/* 
 
 public class Main{
 
@@ -122,5 +123,57 @@ public class Main{
       System.out.println(obj.pop());
       System.out.println(obj.pop());
       System.out.println(obj.isEmpty());
+    }
+}
+
+
+*/
+
+
+//Implementation of Queue using array
+
+
+
+class Queue{
+    private static int rear, front, capacity;
+    private static  int queue[];
+
+    Queue(int c){
+        front=rear=0;
+        capacity=c;
+        queue=new int[capacity]; 
+    }
+
+    static void enque(int data){
+        if(rear==capacity){
+            System.out.println("queue is full");
+            return;
+        }
+        queue[rear++]=data;
+        return;
+    }
+
+    static void deque(){
+        if(front==rear){
+            System.out.println("queue does not have nay element");
+        }
+
+        for(int i=0;i<rear-1;i++){
+            queue[i]=queue[i+1];
+        }
+
+        if(rear<capacity){
+            queue[rear]=0;
+        }
+        rear--;
+    }
+}
+class Main{
+    public static void main(String[] args) {
+        Queue obj=new Queue(4);
+        obj.enque(1);
+        obj.enque(3);
+        obj.enque(5);
+        obj.deque();
     }
 }

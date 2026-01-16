@@ -81,7 +81,7 @@ Day 41–45   → Mixed Interview Problems
 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
+git clone https://github.com/ANKITSARASWAT12345/DSA-45-days
 ```
 
 2. Open in **IntelliJ IDEA / VS Code / Eclipse**

@@ -132,8 +132,7 @@ public class Main{
 
 //Implementation of Queue using array
 
-
-
+/* 
 class Queue{
     private static int rear, front, capacity;
     private static  int queue[];
@@ -175,5 +174,75 @@ class Main{
         obj.enque(3);
         obj.enque(5);
         obj.deque();
+    }
+}*/
+
+
+
+//implementation of Queue using Linked list
+
+
+class Qnode{
+    int data;
+    Qnode next;
+
+    Qnode(int data){
+        this.data=data;
+    }
+}
+
+
+class Queue{
+    Qnode rear, front;
+
+
+    public Queue(){
+        this.rear=this.front=null;
+    }
+
+
+    void enque(int x){
+        Qnode newNode=new Qnode(x);
+
+
+        if(this.rear==null){
+            this.front=this.rear=newNode;
+            return;
+        }
+
+        this.rear.next=newNode;
+        this.rear=newNode;
+    }
+
+
+    void deque(){
+        if(this.front==null){
+            return;
+        }
+        Qnode temp=this.front;
+        this.front=this.front.next;
+
+
+        if(front==null){
+            this.rear=null;
+        }
+    }
+}
+
+
+class Main{
+    public static void main(String[] args) {
+        Queue q=new Queue();
+
+         q.enque(10);
+        q.enque(20);
+        q.deque();
+        q.deque();
+        q.enque(30);
+        q.enque(40);
+        q.enque(50);
+        q.deque();
+        System.out.println("Queue Front : " + q.front.data);
+        System.out.println("Queue Rear : " + q.rear.data);
     }
 }
